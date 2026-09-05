@@ -18,5 +18,8 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::post('/logout', [UserController::class, 'logout']);
+    Route::get('/personal-info', [PersonalInfoController::class, 'index']);
     Route::post('/personal-info', [PersonalInfoController::class, 'store']);
+    Route::put('/personal-info/{id}', [PersonalInfoController::class, 'update']);
+    Route::delete('/personal-info/{id}', [PersonalInfoController::class, 'destroy']);
 });
