@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CardController;
 use App\Http\Controllers\PersonalInfoController;
 
 
@@ -24,4 +25,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/personal-info/{id}', [PersonalInfoController::class, 'update']);
     Route::put('/personal-info/{id}/default', [PersonalInfoController::class, 'default']);
     Route::delete('/personal-info/{id}', [PersonalInfoController::class, 'destroy']);
+
+
+
+    Route::get('/cards', [CardController::class, 'index']);
+    Route::post('/cards', [CardController::class, 'store']);
+    Route::delete('/cards/{card_id}', [CardController::class, 'delete']);
 });
