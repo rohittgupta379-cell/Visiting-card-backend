@@ -28,16 +28,20 @@ class PersonalInfo extends Model
         'qr_placement',
         'qr_url',
         'styling',
+        'is_default',
+        'is_delete',
     ];
 
     protected $casts = [
         'services' => 'array',
         'social_links' => 'array',
         'styling' => 'array',
+        'is_default' => 'boolean',
+        'is_delete' => 'boolean',
     ];
 
-
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }
